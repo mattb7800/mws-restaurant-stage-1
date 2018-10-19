@@ -175,9 +175,12 @@ createRestaurantHTML = (restaurant) => {
   address.innerHTML = restaurant.address;
   li.append(address);
 
+/* Found good info on adding tabindex to js at:
+https://www.w3schools.com/jsref/prop_html_tabindex.asp */
   const more = document.createElement('a');
   more.innerHTML = 'View Details';
   more.href = DBHelper.urlForRestaurant(restaurant);
+  more.tabindex = '3';
   li.append(more)
 
   return li
