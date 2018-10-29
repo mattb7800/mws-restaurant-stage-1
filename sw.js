@@ -41,7 +41,7 @@ self.addEventListener("install", function(e) {
          return fetch(e.request).then(function(response) {
            const cloneRsp = response.clone();
            caches.open(cacheName).then(function(cache) {
-
+             cach.put(e.request, cloneRsp);
            })
            return response;
          })
